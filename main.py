@@ -1,3 +1,5 @@
+import numpy as np
+
 rule30 = {"000": '.',
           "00.": '.',
           "0.0": '.',
@@ -12,7 +14,18 @@ def generate_state():
     return ".....0......"
 
 def evolve(stato):
+    new_state = '.' + stato + '.'
+    #final_state = np.array(len(stato))
+    for i in range(1, len(stato)-1):
+        for chiave in rule30.keys():
+            if new_state[ i-1 : i+2 ] == chiave:
+                #final_state[i] = rule30[chiave] 
+                #print(rule30[chiave])
+                #print(i)
+                #print(final_state[i])
+                print(new_state[ i-1 : i+2 ])
     return stato
+
 
 def simulation(nsteps):
     initial_state = generate_state()
@@ -23,7 +36,7 @@ def simulation(nsteps):
         states_seq.append(new_state)
     return states_seq
 
-
+print(simulation(2))
 
 
 ########################################################
