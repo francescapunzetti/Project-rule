@@ -26,18 +26,24 @@ def evolve(stato):
                 print(new_state[ i-1 : i+2 ])
     return stato
 
-#def evolve(stato):
-#    new_state = '.' + stato + '.'
-#    final_state = "."
-#    for i in range(1, len(stato)+1):
-#        for chiave in rule30.keys():
-#            if new_state[ i-1 : i+2 ] == chiave:
-#                final_state += rule30[chiave] 
-#    final_state += "."
-#    print(new_state.center(50))
-#   return final_state
+"""
 
 
+def evolve(stato):
+    new_state = '.' + stato + '.'
+    final_state = "."
+    for i in range(1, len(stato)+1):
+        for chiave in rule30.keys():
+            if new_state[ i-1 : i+2 ] == chiave:
+                final_state += rule30[chiave]  #you append each time the value given by the right key to the string
+    final_state += "."
+    print(new_state.center(50))
+   return final_state
+
+#at the end of the function you will have a string evolved with two dots as borders
+#so the result string will be 2 characters longer than the initial one
+
+"""
 
 def simulation(nsteps):
     initial_state = generate_state()
