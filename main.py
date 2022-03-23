@@ -11,7 +11,7 @@ rule30 = {"000": '.',
          }
 
 def generate_state():
-    return ".....0......"
+    return ".....0....."
 
 def evolve(stato):
     new_state = '.' + stato + '.'
@@ -25,6 +25,18 @@ def evolve(stato):
                 #print(final_state[i])
                 print(new_state[ i-1 : i+2 ])
     return stato
+
+#def evolve(stato):
+#    new_state = '.' + stato + '.'
+#    final_state = "."
+#    for i in range(1, len(stato)+1):
+#        for chiave in rule30.keys():
+#            if new_state[ i-1 : i+2 ] == chiave:
+#                final_state += rule30[chiave] 
+#    final_state += "."
+#    print(new_state.center(50))
+#   return final_state
+
 
 
 def simulation(nsteps):
